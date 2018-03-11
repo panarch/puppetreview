@@ -1,0 +1,30 @@
+{
+  "name": "puppetreview",
+  "version": "0.0.1",
+  "description": "Simple Visual Regression Test using Puppeteer",
+  "main": "index.js",
+  "dependencies": {
+    "jimp": "^0.2.28",
+    "puppeteer": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panarch/puppetreview.git"
+  },
+  "keywords": [
+    "Visual",
+    "Regression",
+    "Test",
+    "Puppeteer"
+  ],
+  "author": "Taehoon Moon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/panarch/puppetreview/issues"
+  },
+  "homepage": "https://github.com/panarch/puppetreview#readme"
+}
