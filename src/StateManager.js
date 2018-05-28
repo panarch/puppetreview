@@ -26,20 +26,22 @@ class StateManager {
   }
 
   run() {
-    let browser;
+    const manager = this;
 
-    describe('StateManager', () => {
+    describe('StateManager', function () {
+      this.timeout(10000);
+
       it('Launch Puppeteer', async () => {
-        this.browser = await puppeteer.launch(this.options.puppeteer);
+        manager.browser = await puppeteer.launch(manager.options.puppeteer);
       });
 
-      for (const State of this.states) {
-        const state = new State({ manager: this });
+      for (const State of manager.states) {
+        const state = new State({ manager });
         state.runTests();
       }
 
       after(() => {
-        this.browser.close();
+        manager.browser.close();
       });
     });
   }

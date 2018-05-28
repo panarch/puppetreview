@@ -14,7 +14,7 @@
   "scripts": {
     "test:blessed": "http-server -p 8088 ./test/samples/blessed/",
     "test:current": "http-server -p 8089 ./test/samples/current/",
-    "test": "mocha tests/ --timeout 10000"
+    "test": "mocha tests/"
   },
   "repository": {
     "type": "git",
