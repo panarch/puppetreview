@@ -1,8 +1,8 @@
-const assert = require('assert');
 const { State, StateManager, Review } = require('../');
 const MoinState = require('./src/MoinState');
 const MoinMobileState = require('./src/MoinMobileState');
 const { BlessedSampleState, CurrentSampleState } = require('./src/SampleState');
+const PreSampleState = require('./src/PreSampleState');
 
 const states = [
   MoinState,

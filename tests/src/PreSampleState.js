@@ -1,3 +1,4 @@
+const assert = require('assert');
 const { State } = require('../../');
 
 class PreSampleState extends State {
@@ -15,7 +16,7 @@ class PreSampleState extends State {
     assert.equal('Hello', 'Hello');
   }
 
-  async run() {
+  run() {
     this.test('Pre Sample Test Case 1', this.test1);
     this.test('Pre Sample Test Case 2', this.test2);
   }

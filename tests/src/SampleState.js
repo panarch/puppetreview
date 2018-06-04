@@ -1,6 +1,6 @@
 const express = require('express');
 const { State } = require('../../');
-const PreSampleState = require('./PreMoinState');
+const PreSampleState = require('./PreSampleState');
 
 class SampleState extends State {
   static get requires() {
