@@ -14,7 +14,7 @@ class StateManager {
     const states = [];
     for (const State of this.states) {
       for (const PrevState of State.requires) {
-        if (this.states.includes(PrevState)) continue;
+        if (states.includes(PrevState)) continue;
 
         states.push(PrevState);
       }
