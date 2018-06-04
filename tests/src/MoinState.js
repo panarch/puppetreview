@@ -9,6 +9,7 @@ class MoinState extends State {
   constructor(params) {
     super(params);
 
+    this.path = './build/moin';
     this.name = 'Browser Desktop Sample Test';
     this.page = null;
 
@@ -20,7 +21,7 @@ class MoinState extends State {
     const page = await this.manager.browser.newPage();
     await page.setViewport(this.viewport);
     await page.goto('https://themoin.com');
-    await page.screenshot({ path: './build/landing.png', fullPage: true });
+    await page.screenshot({ path: `${ this.path }/landing${ this.postfix }.png`, fullPage: true });
 
     this.page = page;
   }
@@ -29,7 +30,7 @@ class MoinState extends State {
     const page = this.page;
     await page.goto(`https://themoin.com/${ url }`);
     await page.waitFor(300);
-    await page.screenshot({ path: `./build/${ url }${ this.postfix }.png`, fullPage });
+    await page.screenshot({ path: `${ this.path }/${ url }${ this.postfix }.png`, fullPage });
   }
 
   async run() {

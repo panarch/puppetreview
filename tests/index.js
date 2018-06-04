@@ -1,13 +1,14 @@
 const assert = require('assert');
-const { State, StateManager } = require('../');
+const { State, StateManager, Review } = require('../');
 const MoinState = require('./src/MoinState');
 const MoinMobileState = require('./src/MoinMobileState');
-const SampleState = require('./src/SampleState');
+const { BlessedSampleState, CurrentSampleState } = require('./src/SampleState');
 
 const states = [
   MoinState,
   MoinMobileState,
-  SampleState,
+  BlessedSampleState,
+  CurrentSampleState,
 ];
 
 const options = {
@@ -18,5 +19,11 @@ const options = {
 };
 
 const manager = new StateManager({ states, options });
+const review = new Review({
+  blessedPath: './build/blessed',
+  currentPath: './build/current',
+  resultPath: './build/result',
+});
 
 manager.run();
+review.run();

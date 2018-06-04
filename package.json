@@ -9,11 +9,12 @@
     "puppeteer": "^1.3.0"
   },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "express": "^4.16.3",
+    "mkdirp": "^0.5.1",
+    "rm-cli": "^1.4.2"
   },
   "scripts": {
-    "test:blessed": "http-server -p 8088 ./test/samples/blessed/",
-    "test:current": "http-server -p 8089 ./test/samples/current/",
+    "pretest": "rm-cli -r build/ && mkdirp build/result build/blessed build/current build/moin",
     "test": "mocha tests/"
   },
   "repository": {
